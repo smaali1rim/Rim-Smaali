@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - AI Researcher & Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --text: #e5e5e5;
+            --text-dim: #a3a3a3;
+            --border: #2a2a2a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-light);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            padding: 0.7rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent-light);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-meta {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .blog-post {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .blog-post h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post-meta {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(129, 140, 248, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem auto;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero" id="home">
+        <h1>Rim Smaali</h1>
+        <p class="subtitle">AI PhD Student | Bridging Research & Industry</p>
+        <p style="max-width: 700px; margin: 0 auto; color: var(--text-dim);">
+            First-year PhD student exploring the intersection of cutting-edge AI research and real-world applications. 
+            Passionate about making AI more efficient, interpretable, and impactful.
+        </p>
+        <div class="social-links">
+            <a href="#" class="social-btn">GitHub</a>
+            <a href="#" class="social-btn">LinkedIn</a>
+            <a href="#" class="social-btn">Google Scholar</a>
+            <a href="#" class="social-btn">Twitter</a>
+        </div>
+    </div>
+
+    <div class="section" id="research">
+        <h2>Research Interests</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>🧠 Large Language Models</h3>
+                <p>Exploring efficiency, alignment, and reasoning capabilities in modern LLMs.</p>
+                <div>
+                    <span class="tag">Transformers</span>
+                    <span class="tag">Fine-tuning</span>
+                    <span class="tag">RLHF</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>⚡ Model Compression</h3>
+                <p>Making AI models faster and more accessible through quantization and pruning.</p>
+                <div>
+                    <span class="tag">Quantization</span>
+                    <span class="tag">Knowledge Distillation</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>🔍 Interpretability</h3>
+                <p>Understanding what happens inside the black box of neural networks.</p>
+                <div>
+                    <span class="tag">Mechanistic Interpretability</span>
+                    <span class="tag">XAI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="projects">
+        <h2>Industry Projects & Applications</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Production ML Pipeline</h3>
+                <p class="card-meta">Summer 2024 Internship</p>
+                <p>Built end-to-end ML pipeline processing 10M+ daily requests with 99.9% uptime.</p>
+                <div>
+                    <span class="tag">Python</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">AWS</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>RAG-based Chatbot</h3>
+                <p class="card-meta">Side Project</p>
+                <p>Open-source chatbot using retrieval-augmented generation for domain-specific queries.</p>
+                <div>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">Vector DB</span>
+                    <span class="tag">FastAPI</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Computer Vision Tool</h3>
+                <p class="card-meta">Freelance Work</p>
+                <p>Real-time object detection system for retail analytics.</p>
+                <div>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">YOLO</span>
+                    <span class="tag">OpenCV</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="blog">
+        <h2>Latest Blog Posts</h2>
+        
+        <div class="blog-post">
+            <h3>Understanding Transformer Attention: A Visual Guide</h3>
+            <p class="blog-post-meta">December 2024 • 8 min read</p>
+            <p>Breaking down how attention mechanisms work with interactive visualizations and code examples...</p>
+            <div style="margin-top: 1rem;">
+                <span class="tag">Research</span>
+                <span class="tag">Tutorial</span>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <h3>My First Semester as a PhD Student: Lessons Learned</h3>
+            <p class="blog-post-meta">November 2024 • 5 min read</p>
+            <p>Reflections on transitioning into PhD life, managing research expectations, and finding work-life balance...</p>
+            <div style="margin-top: 1rem;">
+                <span class="tag">Personal</span>
+                <span class="tag">PhD Life</span>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <h3>Building Production-Ready ML Systems: What They Don't Teach in Academia</h3>
+            <p class="blog-post-meta">October 2024 • 10 min read</p>
+            <p>Key differences between research prototypes and production systems, with practical tips...</p>
+            <div style="margin-top: 1rem;">
+                <span class="tag">Industry</span>
+                <span class="tag">MLOps</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="cta-section" id="contact">
+            <h2 style="margin-bottom: 1rem;">Let's Connect</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-dim);">
+                Interested in collaborating on research, discussing AI applications, or just want to chat? 
+                I'm always open to interesting conversations.
+            </p>
+            <a href="mailto:your.email@university.edu" class="btn-primary">Get in Touch</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name. Built with curiosity and caffeine.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('.section, .hero');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = 'var(--text-dim)';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--accent-light)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
